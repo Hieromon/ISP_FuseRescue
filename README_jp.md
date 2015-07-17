@@ -77,7 +77,7 @@ PCでターミナルソフトを起動してArudinoにシリアル接続しま�
 #### ATmega88A/168A拡張ヒューズバイト
 名称|ビット|意味|既定値
 ----|------|----|------
- |7～3|1
+- |7～3|(予約)|1
 BOOTSZ1|2|ブートローダ容量選択|0
 BOOTSZ0|1|ブートローダ容量選択|0
 BOOTRST|0|リセットベクタ領域選択|1 (アプリケーション領域)
@@ -109,7 +109,7 @@ RSTDISBL|7|PC6 RESETピン選択|1 (RESET)
 DWEN|6|デバッグWIRE許可|1 (不許可)
 SPIEN|5|シリアルプログラミング許可|0 (シリアルプログラミング許可)
 WDTON|4|ウォッチドッグタイマ常時有効|1 (WDTCSRで許可)
-EESAVE|3チップ消去動作からEEPROMを保護|1 (保護しない)
+EESAVE|3|チップ消去動作からEEPROMを保護|1 (保護しない)
 BOOTSZ1|2|ブートローダ容量|0
 BOOTSZ0|1|ブートローダ容量|0
 BOOTRST|0|リセットベクタ領域選択|1 (アプリケーション領域)
@@ -158,7 +158,7 @@ uno.bootloader.lock_bits=0x0F
 
 参考までに、今回実装したPCBのEagleファイルをアップしておきます。これは表面実装部品で構成したPCBです。
 
-![Eagel CADファイル](https://github.com/Hieromon/ISP_FuseRescue/blob/master/ISP_FuseRescue_C.zip "Eagle CADファイル") (zip)
+[Eagel CADファイル](https://github.com/Hieromon/ISP_FuseRescue/blob/master/ISP_FuseRescue_C.zip "Eagle CADファイル") (zip)
 
 ![PCB\_LAYOUT](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcblayout.jpg)
 ![PCB](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcb.jpg)
