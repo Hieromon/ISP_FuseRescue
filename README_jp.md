@@ -1,6 +1,6 @@
 # ATmega88高電圧パラレルヒューズライタ for Arduino
 
-[![FuseRescue]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue.jpg)
+![FuseRescue](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue.jpg)
 
 ## はじめに
 
@@ -34,7 +34,7 @@ IDEの場合、スケッチの書き込み処理が次の様なエラーにな�
 
 ## 回路図
 
-[![schematic]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/ISP_FuseRescue_C.sch.pdf)
+![schematic](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/ISP_FuseRescue_C.sch.jpg)
 
 回路は単純です。Arduinoの+5V端子からパラレルプログラミングに必要な+12Vを作り出すチャージポンプと、高電圧パラレルプログラマとISPライタを切り替える信号選択用の[2-Chアナログマルチプレクサ](http://www.ti.com/lit/ds/symlink/cd74hc4053.pdf "74HC4053")だけです。  
 チャージポンプには[MC34063](http://www.onsemi.com/pub_link/Collateral/MC34063A-D.PDF "ON Semiconductor MC34063")を使っていますが、定数さえ合わせれば[NJM2360](http://www.njr.co.jp/products/semicon/products/NJM2360.html "JRC NJM2360")などのセカンドソースでも使えます。  
@@ -55,11 +55,11 @@ ISPFuseRescueはArduinoのスケッチフォルダへ、またFuseRescureとArdu
 
 はじめにISPFuseRescureのスケッチをコンパイルしてライタとして使うArudino Unoへ書き込みます。そして高電圧パラレルヒューズライタシールドをArduino Unoに搭載してPCとUSBで接続します。
 
-[![Arduino Operation]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_arduino.jpg)
+![Arduino Operation](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_arduino.jpg)
 
 PCでターミナルソフトを起動してArudinoにシリアル接続します。ターミナル画面に下のようなメッセージが表示されて、プログラミング用のコマンドが入力できるようになります。
 
-[![Terminal Operation]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_terminal.jpg)
+![Terminal Operation](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_terminal.jpg)
 
 ### コマンド
 
@@ -89,18 +89,18 @@ RSTDISBL|7|PC6 RESETピン選択|1 (RESET)
 DWEN|6|デバッグWIRE許可|1 (不許可)
 SPIEN|5|シリアルプログラミング許可|0 (シリアルプログラミング許可)
 WDTON|4|ウォッチドッグタイマ常時有効|1 (WDTCSRで許可)
-EESAVE|3チップ消去動作からEEPROMを保護|1 (保護しない)
+EESAVE|3|チップ消去動作からEEPROMを保護|1 (保護しない)
 BODLEVEL2|2|BODリセット制御|1
 BODLEVEL1|1|BODリセット制御|1
 BODLEVEL0|0|BODリセット制御|1
 
 #### ATmega328拡張ヒューズバイト
-|名称|ビット|意味|既定値|
-|----|------|----|------|
-| - |7～3|(予約)|1|
-|BODLEVEL2|2|BODリセット制御|1|
-|BODLEVEL1|1|BODリセット制御|1|
-|BODLEVEL0|0|BODリセット制御|1|
+名称|ビット|意味|既定値
+----|------|----|------
+- |7～3|(予約)|1
+BODLEVEL2|2|BODリセット制御|1
+BODLEVEL1|1|BODリセット制御|1
+BODLEVEL0|0|BODリセット制御|1
 
 #### ATmega328上位ヒューズバイト
 名称|ビット|意味|既定値
@@ -119,23 +119,23 @@ BOOTRST|0|リセットベクタ領域選択|1 (アプリケーション領域)
 ----|------|----|------
 CKDIV8|7|システムクロック8分周選択|0 (8分周)
 CKOUT|6|システムクロック出力|1 (出力しない)
-SUT1｜5|起動遅延時間|1
-SUT2｜4|起動遅延時間|0
+SUT1|5|起動遅延時間|1
+SUT2|4|起動遅延時間|0
 CKSEL3|3|クロック選択|0
 CKSEL2|2|クロック選択|0
 CKSEL1|1|クロック選択|1
 CKSEL0|0|クロック選択|0
 
 #### ロックビット
-|名称|ビット|意味|既定値|
-|----|------|----|------|
-| - |7～6|(予約)|1|
-|BLB12|5|ブートローダ領域保護|1|
-|BLB11|4|ブートローダ領域保護|1|
-|BLB02|3|アプリケーション領域保護|1|
-|BLB01|2|アプリケーション領域保護|1|
-|LB2|1|フラッシュ・EEPROM保護|1|
-|LB1|0|フラッシュ・EEPROM保護|1|
+名称|ビット|意味|既定値|
+----|------|----|------|
+- |7～6|(予約)|1|
+BLB12|5|ブートローダ領域保護|1|
+BLB11|4|ブートローダ領域保護|1|
+BLB02|3|アプリケーション領域保護|1|
+BLB01|2|アプリケーション領域保護|1|
+LB2|1|フラッシュ・EEPROM保護|1|
+LB1|0|フラッシュ・EEPROM保護|1|
 
 #### Arduinoのヒューズバイト
 ATmega328などをArduinoとして動かす場合は、ヒューズバイトでクロックソースとブートローダを指定する必要があります。その値は`<Arduinoシステムフォルダ>\hardware\arduino\avr\boards.txt`ファイルに記述されています。※Arduino IDE 1.6.0の場合のパス
@@ -154,64 +154,63 @@ uno.bootloader.lock_bits=0x0F
 
 ## 資料
 
-### Eagle CADデータ(回路図とPCBデザイン)
+#### Eagle CADデータ(回路図とPCBデザイン)
 
 参考までに、今回実装したPCBのEagleファイルをアップしておきます。これは表面実装部品で構成したPCBです。
 
-[![Eagel CADファイル]](https://github.com/Hieromon/ISP_FuseRescue/blob/master/ISP_FuseRescue_C.zip "Eagle CADファイル") (zip)
+![Eagel CADファイル](https://github.com/Hieromon/ISP_FuseRescue/blob/master/ISP_FuseRescue_C.zip "Eagle CADファイル") (zip)
 
-[![PCB\_LAYOUT]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcblayout.jpg)
-[![PCB]](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcb.jpg)
+![PCB\_LAYOUT](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcblayout.jpg)
+![PCB](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcb.jpg)
 
-### 部品表
+#### 部品表
 
-
-Part|Value|Device
-----|-----|------
-C1  |330μ|電解コンデンサ
-|C2|100μ|電解コンデンサ|
-|C3|680pF|積層セラミックコンデンサ|
-|C4|0.1μF|積層セラミックコンデンサ|
-|C5|22pF|積層セラミックコンデンサ|
-|C6|22pF|積層セラミックコンデンサ|
-|C7|0.1μF|積層セラミックコンデンサ|
-|C8|0.1μF|積層セラミックコンデンサ|
-|D1|RSX101VA-30TR|ショットキーバリアダイオード|
-|PGM|緑|LED|
-|PWR|緑|LED|
-|ERR|赤|LED|
-|HB|黄|LED|
-|RX|黄|LED|
-|TX|黄|LED|
-|IC1|74HC4053|3回路2-Chアナログマルチプレクサ|
-|IC2|74HC4053|3回路2-Chアナログマルチプレクサ|
-|L1|100μH|インダクタ|
-|Q1|SI6544DQ|N/P-Ch複合パワーMOSFET|
-|Q2|16MHz|クリスタル発振子|
-|R1|1Ω|抵抗|
-|R2|1Ω|抵抗|
-|R3|200Ω|抵抗|
-|R4|1.1KΩ|抵抗|
-|R5|100KΩ|抵抗|
-|R6|130kΩ|抵抗|
-|R7|3.3KΩ|抵抗|
-|R8|10KΩ|抵抗|
-|R9|15KΩ|抵抗|
-|R10|10KΩ|抵抗|
-|R11|1KΩ|抵抗|
-|R12|1KΩ|抵抗|
-|R13|1KΩ|抵抗|
-|R14|1KΩ|抵抗|
-|R15|1MΩ|抵抗|
-|R16|1KΩ|抵抗|
-|R17|1KΩ|抵抗|
-|R18|1KΩ|抵抗|
-|R19|10KΩ|抵抗|
-|R20|10KΩ|抵抗|
-|R21|10KΩ|抵抗|
-|S1|SS-22SDP2|2回路スライドスイッチ|
-|S2|RESET|DIPスイッチ|
-|T1|2SC4116|NPNトランジスタ|
-|T2|2SC4116|NPNトランジスタ|
-|U2|MC34063ADG|DC-DCコンバータ|
-|U3|ICソケット|28ピンDIP|
+Part|Value|Device|Package
+----|-----|------|-------
+C1|330μ|電解コンデンサ|Φ6.3mm x 7.7mm
+C2|100μ|電解コンデンサ|Φ8.0mm x 10.2mm
+C3|680pF|積層セラミックコンデンサ|2012 SMD
+C4|0.1μF|積層セラミックコンデンサ|2012 SMD
+C5|22pF|積層セラミックコンデンサ|1608 SMD
+C6|22pF|積層セラミックコンデンサ|1608 SMD
+C7|0.1μF|積層セラミックコンデンサ|2012 SMD
+C8|0.1μF|積層セラミックコンデンサ|2012 SMD
+D1|RSX101VA-30TR|ショットキーバリアダイオード|TUMD2
+PGM|緑|LED|2012 SMD
+PWR|緑|LED|2012 SMD
+ERR|赤|LED|2012 SMD
+HB|黄|LED|2012 SMD
+RX|黄|LED|2012 SMD
+TX|黄|LED|2012 SMD
+IC1|74HC4053|3回路2-Chアナログマルチプレクサ|TSSOP-16
+IC2|74HC4053|3回路2-Chアナログマルチプレクサ|TSSOP-16
+L1|100μH|インダクタ|3225 SMD
+Q1|SI6544DQ|N/P-Ch複合パワーMOSFET|TSSOP-8
+Q2|16MHz|クリスタル発振子|HS-49/S
+R1|1Ω|抵抗|2012 SMD
+R2|1Ω|抵抗|2012 SMD
+R3|200Ω|抵抗|2012 SMD
+R4|1.1KΩ|抵抗|2012 SMD
+R5|100KΩ|抵抗|2012 SMD
+R6|130kΩ|抵抗|2012 SMD
+R7|3.3KΩ|抵抗|2012 SMD
+R8|10KΩ|抵抗|2012 SMD
+R9|15KΩ|抵抗|2012 SMD
+R10|10KΩ|抵抗|2012 SMD
+R11|1KΩ|抵抗|2012 SMD
+R12|1KΩ|抵抗|2012 SMD
+R13|1KΩ|抵抗|2012 SMD
+R14|1KΩ|抵抗|2012 SMD
+R15|1MΩ|抵抗|2012 SMD
+R16|1KΩ|抵抗|2012 SMD
+R17|1KΩ|抵抗|2012 SMD
+R18|1KΩ|抵抗|2012 SMD
+R19|10KΩ|抵抗|2012 SMD
+R20|10KΩ|抵抗|2012 SMD
+R21|10KΩ|抵抗|2012 SMD
+S1|SS-22SDP2|2回路スライドスイッチ|
+S2|RESET|DIPスイッチ|
+T1|2SC4116|NPNトランジスタ|SOT-23(SC-70)
+T2|2SC4116|NPNトランジスタ|SOT-23(SC-70)
+U2|MC34063ADG|DC-DCコンバータ|SIOC-8
+U3|ICソケット|28ピン|300MIL DIP
