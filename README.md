@@ -98,7 +98,7 @@ BODLEVEL2|2|Brown-out Detector trigger level|1
 BODLEVEL1|1|Brown-out Detector trigger level|1
 BODLEVEL0|0|Brown-out Detector trigger level|1
 
-#### ATmega328 Fuse HIgh Byte
+#### ATmega328 Fuse High Byte
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
 RSTDISBL|7|External Reset Disable|1 (RESET)
