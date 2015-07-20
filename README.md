@@ -59,20 +59,21 @@ You start the serial terminal on the PC and connect to the arduino. Messages as 
 
 ### Commands
 
-** L **: The lower fuse byte write
-** H **: The upper fuse byte write
-** X **: The extended fuse byte write
-** K **: Lock bit write
-** W **: Default (factory value) fuse byte write
-** A **: Arduino fuse byte write
-** E **: Chip erase
-** V **: Verify the fuse byte or lock-bit
+**L** : The lower fuse byte write
+**H** : The upper fuse byte write
+**X** : The extended fuse byte write
+**K** : Lock bit write
+**W** : Default (factory value) fuse byte write
+**A** : Arduino fuse byte write
+**E** : Chip erase
+**V** : Verify the fuse byte or lock-bit
 
 ### Fuse byte and lock bits
 
 #### ATmega88A/168A Extended Fuse Byte
 Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
 - |7-3|-|1
 BOOTSZ1|2|Select boot size|0
 BOOTSZ0|1|Select boot size|0
-BOOTRST|0|リセットベクタ領域選択|1 (アプリケーション領域)
+BOOTRST|0|Select Reset Vector|1 (Application area)
