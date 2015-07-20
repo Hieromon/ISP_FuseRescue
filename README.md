@@ -1,6 +1,6 @@
 # ATmega88 High-voltage parallel fuse writer for Arduino
 
-[“ú–{ŒêREADME_jp.md](https://github.com/Hieromon/ISP_FuseRescue/blob/master/README_jp.md "“ú–{ŒêREADME_jp.md")
+[æ—¥æœ¬èªžREADME_jp.md](https://github.com/Hieromon/ISP_FuseRescue/blob/master/README_jp.md "æ—¥æœ¬èªžREADME_jp.md")
 
 ![FuseRescue](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue.jpg)
 
@@ -59,14 +59,14 @@ You start the serial terminal on the PC and connect to the arduino. Messages as 
 
 ### Commands
 
-**L** : The lower fuse byte write
-**H** : The upper fuse byte write
-**X** : The extended fuse byte write
-**K** : Lock bit write
-**W** : Default (factory value) fuse byte write
-**A** : Arduino fuse byte write
-**E** : Chip erase
-**V** : Verify the fuse byte or lock-bit
+**L** : The lower fuse byte write  
+**H** : The upper fuse byte write  
+**X** : The extended fuse byte write  
+**K** : Lock bit write  
+**W** : Default (factory value) fuse byte write  
+**A** : Arduino fuse byte write  
+**E** : Chip erase  
+**V** : Verify the fuse byte or lock-bit  
 
 ### Fuse byte and lock bits
 
