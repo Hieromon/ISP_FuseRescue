@@ -82,7 +82,7 @@ BOOTRST|0|Select Reset Vector|1 (Application area)
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
 RSTDISBL|7|External Reset Disable|1 (RESET)
-DWEN|6|デバッグWIRE許可|1 (Disable)
+DWEN|6|debugWIRE Enable|1 (Disable)
 SPIEN|5|Enable Serial Program and Data Downloading|0 (SPI programming enabled)
 WDTON|4|Watchdog Timer Always On|1 (On at WDTCSR)
 EESAVE|3|EEPROM memory is preserved through the Chip Erase|1 (EEPROM not reserved)
@@ -103,8 +103,7 @@ Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
 RSTDISBL|7|External Reset Disable|1 (RESET)
 DWEN|6|debugWIRE Enable|1 (Disable)
-SPIEN|5|Enable Serial Program and
-Data Downloading|0 (SPI programming enabled)
+SPIEN|5|Enable Serial Program and Data Downloading|0 (SPI programming enabled)
 WDTON|4|Watchdog Timer Always On|1 (On at WDTCSR)
 EESAVE|3|EEPROM memory is preserved through the Chip Erase|1 (EEPROM not reserved)
 BOOTSZ1|2|Select Boot Size|0
@@ -182,27 +181,27 @@ IC2|74HC4053|ANALOG MULTIPLEXER|TSSOP-16
 L1|100μH|Inductor|3225 SMD
 Q1|SI6544DQ|N- and P-Channel MOSFET|TSSOP-8
 Q2|16MHz|Crystal|HS-49/S
-R1|1Ω|Register|2012 SMD
-R2|1Ω|Register|2012 SMD
-R3|200Ω|Register|2012 SMD
-R4|1.1KΩ|Register|2012 SMD
-R5|100KΩ|Register|2012 SMD
-R6|130kΩ|Register|2012 SMD
-R7|3.3KΩ|Register|2012 SMD
-R8|10KΩ|Register|2012 SMD
-R9|15KΩ|Register|2012 SMD
-R10|10KΩ|Register|2012 SMD
-R11|1KΩ|Register|2012 SMD
-R12|1KΩ|Register|2012 SMD
-R13|1KΩ|Register|2012 SMD
-R14|1KΩ|Register|2012 SMD
-R15|1MΩ|Register|2012 SMD
-R16|1KΩ|Register|2012 SMD
-R17|1KΩ|Register|2012 SMD
-R18|1KΩ|Register|2012 SMD
-R19|10KΩ|Register|2012 SMD
-R20|10KΩ|Register|2012 SMD
-R21|10KΩ|Register|2012 SMD
+R1|1Ω|Registor|2012 SMD
+R2|1Ω|Registor|2012 SMD
+R3|200Ω|Registor|2012 SMD
+R4|1.1KΩ|Registor|2012 SMD
+R5|100KΩ|Registor|2012 SMD
+R6|130kΩ|Registor|2012 SMD
+R7|3.3KΩ|Registor|2012 SMD
+R8|10KΩ|Registor|2012 SMD
+R9|15KΩ|Registor|2012 SMD
+R10|10KΩ|Registor|2012 SMD
+R11|1KΩ|Registor|2012 SMD
+R12|1KΩ|Registor|2012 SMD
+R13|1KΩ|Registor|2012 SMD
+R14|1KΩ|Registor|2012 SMD
+R15|1MΩ|Registor|2012 SMD
+R16|1KΩ|Registor|2012 SMD
+R17|1KΩ|Registor|2012 SMD
+R18|1KΩ|Registor|2012 SMD
+R19|10KΩ|Registor|2012 SMD
+R20|10KΩ|Registor|2012 SMD
+R21|10KΩ|Registor|2012 SMD
 S1|SS-22SDP2|On-On Double Pole slide switch|NKK SS22SDP2
 S2|RESET|Tactile Switch|
 T1|2SC4116|NPN Transistor|SOT-23(SC-70)
