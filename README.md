@@ -77,3 +77,135 @@ Name|Bit No|Description|Defalut Value
 BOOTSZ1|2|Select boot size|0
 BOOTSZ0|1|Select boot size|0
 BOOTRST|0|Select Reset Vector|1 (Application area)
+
+#### ATmega88A/168A Fuse High Byte
+Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
+RSTDISBL|7|External Reset Disable|1 (RESET)
+DWEN|6|デバッグWIRE許可|1 (Disable)
+SPIEN|5|Enable Serial Program and Data Downloading|0 (SPI programming enabled)
+WDTON|4|Watchdog Timer Always On|1 (On at WDTCSR)
+EESAVE|3|EEPROM memory is preserved through the Chip Erase|1 (EEPROM not reserved)
+BODLEVEL2|2|Brown-out Detector trigger level|1
+BODLEVEL1|1|Brown-out Detector trigger level|1
+BODLEVEL0|0Brown-out Detector trigger level|1
+
+#### ATmega328 Extended Fuse Byte
+Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
+- |7～3|-|1
+BODLEVEL2|2|Brown-out Detector trigger level|1
+BODLEVEL1|1|Brown-out Detector trigger level|1
+BODLEVEL0|0|Brown-out Detector trigger level|1
+
+#### ATmega328 Fuse HIgh Byte
+Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
+RSTDISBL|7|External Reset Disable|1 (RESET)
+DWEN|6|debugWIRE Enable|1 (Disable)
+SPIEN|5|Enable Serial Program and
+Data Downloading|0 (SPI programming enabled)
+WDTON|4|Watchdog Timer Always On|1 (On at WDTCSR)
+EESAVE|3|EEPROM memory is preserved through the Chip Erase|1 (EEPROM not reserved)
+BOOTSZ1|2|Select Boot Size|0
+BOOTSZ0|1|Select Boot Size|0
+BOOTRST|0|Select Reset Vector|1 (Application area)
+
+#### Fuse Low Byte
+Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
+CKDIV8|7|Divide clock by 8|0 (Yes)
+CKOUT|6|Clock output|1 (Disabled)
+SUT1|5|Select start-up time|1
+SUT2|4|Select start-up time|0
+CKSEL3|3|Select Clock source|0
+CKSEL2|2|Select Clock source|0
+CKSEL1|1|Select Clock source|1
+CKSEL0|0|Select Clock source|0
+
+#### Lock Bits
+Name|Bit No|Description|Defalut Value
+----|------|-----------|-------------
+- |7-6|-|1|
+BLB12|5|Boot Lock bit|1|
+BLB11|4|Boot Lock bit|1|
+BLB02|3|Boot Lock bit|1|
+BLB01|2|Boot Lock bit|1|
+LB2|1|Lock bit|1|
+LB1|0|Lock bit|1|
+
+#### The fuse byte for Arduino
+If you want ATmega328 behavior as Arduino, you will need to specify a clock source and a boot loader in the fuse bytes. Its value has been described in the `<Arduino system folder>\hardware\arduino\avr\boards.txt` file. (Path in the case of Arduino IDE 1.6.0)
+````
+uno.bootloader.low_fuses=0xFF
+uno.bootloader.high_fuses=0xDE
+uno.bootloader.extended_fuses=0x05
+uno.bootloader.unlock_bits=0x3F
+uno.bootloader.lock_bits=0x0F
+````
+
+### Caution!!!
+
+You can not operate the switch for changing High-voltage parallel fuse writer and the ISP writer while connect with PC by USB. It is short-circuited. Changing operation must be in the state where power is not supplied.
+
+## Appendix
+
+#### Eagle Cad files(Schematic and PCB layout)
+
+For reference, the PCB data of Eagle cad will be posted. This PCB is layouted with SMD parts.
+
+[Eagel CAD file](https://github.com/Hieromon/ISP_FuseRescue/blob/master/ISP_FuseRescue_C.zip "Eagle CAD file") (zip)
+
+![PCB\_LAYOUT](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcblayout.jpg)
+![PCB](https://raw.github.com/wiki/hieromon/ISP_FuseRescue/images/FuseRescue_pcb.jpg)
+
+#### BOM 
+Part|Value|Device|Package
+----|-----|------|-------
+C1|330μ|Aluminum Electrolytic Capacitor|SMD Φ6.3mm x 7.7mm
+C2|100μ|Aluminum Electrolytic Capacitor|SMD Φ8.0mm x 10.2mm
+C3|680pF|Ceramic Capacitor|2012 SMD
+C4|0.1μF|Ceramic Capacitor|2012 SMD
+C5|22pF|Ceramic Capacitor|1608 SMD
+C6|22pF|Ceramic Capacitor|1608 SMD
+C7|0.1μF|Ceramic Capacitor|2012 SMD
+C8|0.1μF|Ceramic Capacitor|2012 SMD
+D1|RSX101VA-30TR|Shottky Barrier Diode|TUMD2
+PGM|Green|LED|2012 SMD
+PWR|Green|LED|2012 SMD
+ERR|Red|LED|2012 SMD
+HB|Yellow|LED|2012 SMD
+RX|Yellow|LED|2012 SMD
+TX|Yellow|LED|2012 SMD
+IC1|74HC4053|ANALOG MULTIPLEXER|TSSOP-16
+IC2|74HC4053|ANALOG MULTIPLEXER|TSSOP-16
+L1|100μH|Inductor|3225 SMD
+Q1|SI6544DQ|N- and P-Channel MOSFET|TSSOP-8
+Q2|16MHz|Crystal|HS-49/S
+R1|1Ω|Register|2012 SMD
+R2|1Ω|Register|2012 SMD
+R3|200Ω|Register|2012 SMD
+R4|1.1KΩ|Register|2012 SMD
+R5|100KΩ|Register|2012 SMD
+R6|130kΩ|Register|2012 SMD
+R7|3.3KΩ|Register|2012 SMD
+R8|10KΩ|Register|2012 SMD
+R9|15KΩ|Register|2012 SMD
+R10|10KΩ|Register|2012 SMD
+R11|1KΩ|Register|2012 SMD
+R12|1KΩ|Register|2012 SMD
+R13|1KΩ|Register|2012 SMD
+R14|1KΩ|Register|2012 SMD
+R15|1MΩ|Register|2012 SMD
+R16|1KΩ|Register|2012 SMD
+R17|1KΩ|Register|2012 SMD
+R18|1KΩ|Register|2012 SMD
+R19|10KΩ|Register|2012 SMD
+R20|10KΩ|Register|2012 SMD
+R21|10KΩ|Register|2012 SMD
+S1|SS-22SDP2|On-On Double Pole slide switch|NKK SS22SDP2
+S2|RESET|Tactile Switch|
+T1|2SC4116|NPN Transistor|SOT-23(SC-70)
+T2|2SC4116|NPN Transistor|SOT-23(SC-70)
+U2|MC34063ADG|Charge-pump DC-DC converter|SIOC-8
+U3|IC-socket|28pin IC Socket|300MIL DIP
