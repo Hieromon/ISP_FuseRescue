@@ -88,7 +88,7 @@ WDTON|4|Watchdog Timer Always On|1 (On at WDTCSR)
 EESAVE|3|EEPROM memory is preserved through the Chip Erase|1 (EEPROM not reserved)
 BODLEVEL2|2|Brown-out Detector trigger level|1
 BODLEVEL1|1|Brown-out Detector trigger level|1
-BODLEVEL0|0Brown-out Detector trigger level|1
+BODLEVEL0|0|Brown-out Detector trigger level|1
 
 #### ATmega328 Extended Fuse Byte
 Name|Bit No|Description|Defalut Value
