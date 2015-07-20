@@ -93,7 +93,7 @@ BODLEVEL0|0|Brown-out Detector trigger level|1
 #### ATmega328 Extended Fuse Byte
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
-- |7～3|-|1
+- |7-3|-|1
 BODLEVEL2|2|Brown-out Detector trigger level|1
 BODLEVEL1|1|Brown-out Detector trigger level|1
 BODLEVEL0|0|Brown-out Detector trigger level|1
