@@ -73,7 +73,7 @@ You start the serial terminal on the PC and connect to the arduino. Messages as 
 #### ATmega88A/168A Extended Fuse Byte
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
-- |7-3|-|1
+| - |7-3|-|1
 BOOTSZ1|2|Select boot size|0
 BOOTSZ0|1|Select boot size|0
 BOOTRST|0|Select Reset Vector|1 (Application area)
@@ -93,7 +93,7 @@ BODLEVEL0|0|Brown-out Detector trigger level|1
 #### ATmega328 Extended Fuse Byte
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
-- |7-3|-|1
+| - |7-3|-|1
 BODLEVEL2|2|Brown-out Detector trigger level|1
 BODLEVEL1|1|Brown-out Detector trigger level|1
 BODLEVEL0|0|Brown-out Detector trigger level|1
@@ -125,7 +125,7 @@ CKSEL0|0|Select Clock source|0
 #### Lock Bits
 Name|Bit No|Description|Defalut Value
 ----|------|-----------|-------------
-- |7-6|-|1|
+| - |7-6|-|1|
 BLB12|5|Boot Lock bit|1|
 BLB11|4|Boot Lock bit|1|
 BLB02|3|Boot Lock bit|1|
